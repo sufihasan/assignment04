@@ -48,7 +48,7 @@ function willSuccess(marks) {
     const pass = [];
     const fail = [];
     for (const mark of marks) {
-        // console.log(mark);
+
         if (mark >= 50) {
             pass.push(mark);
         }
@@ -66,6 +66,26 @@ function willSuccess(marks) {
         return false;
     }
 }
+
+
+
+function validProposal(person1, person2) {
+
+    if (typeof person1 !== 'object' || typeof person2 !== 'object' || Array.isArray(person1)
+        || Array.isArray(person2)) {
+        return 'Invalid';
+    }
+
+    const ageDiff = Math.abs(person1.age - person2.age);
+
+    if (person1.gender !== person2.gender && ageDiff <= 7) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 
 
 

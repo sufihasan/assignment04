@@ -7,7 +7,7 @@ function willSuccess(marks) {
     const pass = [];
     const fail = [];
     for (const mark of marks) {
-        // console.log(mark);
+
         if (mark >= 50) {
             pass.push(mark);
         }
