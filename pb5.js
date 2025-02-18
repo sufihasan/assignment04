@@ -1,4 +1,7 @@
 function calculateSleepTime(times) {
+    if (!Array.isArray(times)) {
+        return 'Invalid';
+    }
     let sum = 0;
     for (const time of times) {
         if (typeof time !== 'number') {
@@ -7,7 +10,6 @@ function calculateSleepTime(times) {
         sum = sum + time;
     }
 
-    console.log('sum', sum);
 
 
     let totalMin = parseInt(sum / 60);
@@ -27,15 +29,13 @@ function calculateSleepTime(times) {
     totalTime.minute = totalMin;
     totalTime.second = totalSec;
 
-    console.log(totalHour, totalMin, totalSec);
-    console.log(totalTime);
 
-
+    return totalTime;
 
 }
 
 
 
 
-const result = calculateSleepTime([100, 3800, "asd"]);
+const result = calculateSleepTime([1000, 499, 519, 300]);
 console.log(result);
